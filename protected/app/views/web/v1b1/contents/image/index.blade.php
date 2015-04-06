@@ -2,6 +2,9 @@
 	$images = $response['results']['data'];
 ?>
 @foreach($images as $image)
+	<?php
+		$detail = $image['detail'];
+	?>
 	<div class="card image item">
 		<div class="img">
 			<a href="{{URL::to('image/'.$image['id'])}}">

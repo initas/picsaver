@@ -179,6 +179,7 @@ body {
 }
 
 /*.card.album*/
+
 .card.album > .img > a{
 	display:block;
 	margin:-1px;
@@ -366,5 +367,8 @@ input[type="color"]:focus,
 	.masonry .item{
 		width:calc(20% - 15px);
 		margin:7.5px;
+	}
+	.masonry .item.landscape{
+		width:calc(40% - 15px);
 	}
 }

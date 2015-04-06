@@ -3,6 +3,7 @@ namespace models\v1b1;
 use \DB;
 use \File;
 use \Helper;
+use \URL;
 use \Validator;
 
 use Illuminate\Database\Eloquent\SoftDeletingTrait;
@@ -19,6 +20,8 @@ class Image extends Ardent {
 	protected $table = 'images';			
     protected $fillable = array('');
 	const PER_PAGE = 30;
+	const FOLDER_PATH = 'img/image';
+	
 	
 	/*
 	|--------------------------------------------------------------------------
@@ -145,30 +148,42 @@ class Image extends Ardent {
 			$image->status = VALIDATION_ERROR;
 			$image->customErrors = $validator->errors();
 		}else{
-			$path = 'img/image';
 			
 			$fileName = $file->getClientOriginalName();
 			$fileSize = $file->getSize();
+			$extension = $file->getClientOriginalExtension();
 			$fileType = $file->getMimeType();
 			$fileSrc = $file->getRealPath();
-			$extension = $file->getClientOriginalExtension();
 			
-			$targetName = ($image->id).md5($fileName.$fileSize.$fileType.$fileSrc.time().rand()).'.'.$extension;
-			$file->move($path, $targetName);
+			if($fileType=='image/jpeg'){
+				$exif_data = exif_read_data($fileSrc);
+				if (!empty($exif_data['DateTimeOriginal'])) {
+					$image->image_date_taken = $exif_data['DateTimeOriginal'];
+					
+				}
+			}
 			
 			$image->image_name = $fileName;
-			$image->image_url = $targetName;
 			$image->image_size = $fileSize;
 			$image->image_mime = $fileType;
-			$image->save();
+			
+			list($width, $height) = getimagesize($fileSrc); 
+			$image->image_width = $width;
+			$image->image_height = $height;
+			
+			$targetName = ($image->id).md5($fileName.$fileSize.$fileType.$fileSrc.time().rand()).'.'.$extension;
+			$image->image_url = $targetName;
+			
+			if($file->move(self::FOLDER_PATH, $targetName)){
+				$image->save();
+			}
 		}
 		
 		return $image;
 	}
 	public static function deleteImageFile($image_url){
-		$path = 'img/image';
-		if(File::exists($path.'/'.$image_url)){
-			File::delete($path.'/'.$image_url);
+		if(File::exists(self::FOLDER_PATH.'/'.$image_url)){
+			File::delete(self::FOLDER_PATH.'/'.$image_url);
 		}
 	}
 	
@@ -185,6 +200,7 @@ class Image extends Ardent {
 	}
 	public function getDetailAttribute(){
 		$image_id = $this->id;
+		$image_url = $this->image_url;
 		$user_id = $this->user_id;
 		
 		$detail['total_tags'] = 0;

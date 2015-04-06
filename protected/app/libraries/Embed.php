@@ -1,7 +1,10 @@
 <?php
 class Embed{
+	const FOLDER_PATH = 'img/image';
 	public static function original($file_name){
-		$path = 'img/image/'.$file_name;
+		$path = self::FOLDER_PATH.'/'.$file_name;
+		$path = self::validatePath($path);
+		
 		$imageInfo = getimagesize($path);
 		$mime = $imageInfo['mime'];
 		
@@ -10,7 +13,8 @@ class Embed{
 	}
 	
 	public static function resizeImage($newsize, $file_name, $byHeight=false){
-		$path = 'img/image/'.$file_name;
+		$path = self::FOLDER_PATH.'/'.$file_name;
+		$path = self::validatePath($path);
 		
 		$imageInfo = getimagesize($path);
 		$mime = $imageInfo['mime'];
@@ -47,7 +51,9 @@ class Embed{
 		self::imageOutput($resized_image, $mime);
 	}
 	public static function cropImage($w, $h, $file_name){
-		$path = 'img/image/'.$file_name;
+		$path = self::FOLDER_PATH.'/'.$file_name;
+		$path = self::validatePath($path);
+		
 		$imageInfo = getimagesize($path);
 		$width = $imageInfo[0];
 		$height = $imageInfo[1];
@@ -78,6 +84,12 @@ class Embed{
 	}
 	
 	#utillities
+	private static function validatePath($image_url){
+		if(!File::exists($image_url)){
+			$image_url = 'img/stock/web/v1b1/image_not_found.png';
+		}
+		return $image_url;
+	}
 	private static function createImage($path, $mime){
 		if($mime == 'image/jpeg'){
 			$image = imagecreatefromjpeg($path);
