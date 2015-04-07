@@ -1,0 +1,39 @@
+/*uploader*/
+#uploader{
+	margin:-7.5px;
+}
+#uploader .item, #uploader #drop{
+	position:relative;
+	border:1px solid #ddd;
+	width:165px;
+	height:165px;
+	background-size:cover;
+	background-position: center center;
+	background-repeat:no-repeat;
+	float:left;
+	margin:7.5px;
+}
+#uploader #drop a{
+	display:block;
+	background:#fef;
+	line-height:165px;
+	text-align:center;
+}
+#uploader #drop input{
+	position:absolute;
+	visibility:hidden;
+}
+
+#uploader .item .progress{
+	background:rgba(0,255,0,0.5);
+	color:#fff;
+	position:absolute;
+	bottom:0;
+	width:0%;
+	height:auto;
+	text-align:center;
+}
+
+.clearfix{
+	clear:both;
+}

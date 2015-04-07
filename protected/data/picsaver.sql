@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 31, 2015 at 03:28 PM
+-- Generation Time: Apr 07, 2015 at 10:36 PM
 -- Server version: 5.5.27
 -- PHP Version: 5.4.7
 
@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `albums` (
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `albums`
@@ -44,8 +44,7 @@ CREATE TABLE IF NOT EXISTS `albums` (
 
 INSERT INTO `albums` (`id`, `user_id`, `name`, `description`, `created_at`, `updated_at`, `deleted_at`) VALUES
 (1, 1, 'Fermentum', 'Vestibulum fermentum accumsan metus, vitae commodo dui feugiat nec.', '2015-03-31 05:12:00', NULL, NULL),
-(2, 1, 'Feugiat', NULL, '2015-03-31 05:12:00', NULL, NULL),
-(7, 1, 'Toys', 'My toy collections', '2015-03-30 23:16:40', '2015-03-30 23:16:40', NULL);
+(2, 1, 'Feugiat', NULL, '2015-03-31 05:12:00', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -63,6 +62,9 @@ CREATE TABLE IF NOT EXISTS `images` (
   `image_url` varchar(255) NOT NULL,
   `image_size` int(11) NOT NULL,
   `image_mime` varchar(45) NOT NULL,
+  `image_width` double NOT NULL,
+  `image_height` double NOT NULL,
+  `image_date_taken` timestamp NULL DEFAULT NULL,
   `sign_number` varchar(255) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL,
@@ -70,28 +72,28 @@ CREATE TABLE IF NOT EXISTS `images` (
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`),
   KEY `album_id` (`album_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=25 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;
 
 --
 -- Dumping data for table `images`
 --
 
-INSERT INTO `images` (`id`, `user_id`, `album_id`, `name`, `description`, `image_name`, `image_url`, `image_size`, `image_mime`, `sign_number`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 1, 1, 'Donec nec', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In iaculis sem eu venenatis luctus. Vestibulum ultrices sem est, vel tristique leo mollis eget. Nunc eu egestas odio.', 'anata.jpg', '1cd3b20ca1197a74f8bba91d03d511d2d.jpg', 74536, 'image/jpeg', NULL, '2015-03-31 12:11:30', '2015-03-29 12:02:37', NULL),
-(2, 1, 2, 'justo id justo', 'Vestibulum fermentum accumsan metus, vitae commodo dui feugiat nec.', '', '02c078846b5bb6bea507ace3477f62a8.jpg', 0, '', NULL, '2015-03-31 12:11:35', '2015-03-27 14:59:24', NULL),
-(3, 2, 2, 'tempor malesuada', 'Phasellus vel scelerisque lacus. Mauris vel lectus ac urna vulputate vehicula ut et orci. Vivamus lacinia iaculis lacus, non posuere neque laoreet quis. Aenean at neque eu tellus laoreet faucibus a a nulla. Phasellus scelerisque turpis quis dapibus aliquam.', '', '4b85c2f9b3c322d980c3cf7a770e270d.jpg', 0, '', NULL, '2015-03-31 12:11:48', '2015-03-27 14:59:24', NULL),
-(4, 2, NULL, 'Lorem ipsum dolor', NULL, '1mb.PNG', '6effbd79f65c2a2eef400522d2ec7ade.jpg', 42375, 'image/png', NULL, '2015-03-30 10:19:49', '2015-03-28 02:00:54', NULL),
-(5, 2, 2, NULL, NULL, 'anata.jpg', '7cd29e285a54cb6a7e25d807a571bfc8.jpg', 74536, 'image/jpeg', NULL, '2015-03-31 12:11:54', '2015-03-28 07:59:55', NULL),
-(6, 2, 1, 'consectetur adipiscing elit', 'Suspendisse commodo posuere lacus, in scelerisque dolor semper vehicula. Nulla vel velit vestibulum dui ullamcorper luctus. Quisque felis dui, tempus sit amet viverra id, ornare et lorem.', 'anata.jpg', '9f9a35d065353bcc5e83387c17b583cb.jpg', 74536, 'image/jpeg', NULL, '2015-03-31 12:11:57', '2015-03-28 07:57:50', NULL),
-(7, 2, 1, 'Etiam vehicula ex in sem lacinia pellentesque', 'Nulla et ipsum a lorem fermentum sodales id eu urna. Suspendisse sit amet tortor eu nunc aliquet molestie quis eu urna.', '1mb.PNG', '073423dd1301b3322b4230bc9192e36f.jpg', 42375, 'image/png', NULL, '2015-03-31 12:12:00', '2015-03-28 08:06:13', NULL),
-(8, 2, 1, NULL, 'Donec nec justo id justo tempor malesuada. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vehicula ex in sem lacinia pellentesque. Proin rhoncus massa ut magna suscipit aliquet. Suspendisse potenti. In pharetra vestibulum commodo. Curabitur tortor nisl, posuere non mattis sed, tempor ac justo. Morbi quis condimentum quam, at bibendum est. Sed at metus nec libero laoreet rhoncus consectetur in diam.', 'p4.jpg', '2131231231231231231232343454645.jpg', 2860, 'image/jpeg', NULL, '2015-03-31 12:12:03', '2015-03-29 12:00:25', NULL),
-(9, 2, 1, NULL, NULL, 'p4.jpg', '4113186_20131017080951.jpg', 2860, 'image/jpeg', NULL, '2015-03-31 12:12:06', '2015-03-29 12:00:49', NULL),
-(10, 2, NULL, 'Etiam vitae tempus justo', 'Etiam vitae tempus justo, id porttitor est.', 'p4.jpg', '9345724b615824fa912c60b76827163d.jpg', 2860, 'image/jpeg', NULL, '2015-03-30 10:20:05', '2015-03-29 12:00:52', NULL),
-(11, 2, NULL, NULL, NULL, 'p4.jpg', '51590525e313e0f292deded83c22c167.jpg', 2860, 'image/jpeg', NULL, '2015-03-30 10:20:09', '2015-03-29 12:01:07', NULL),
-(12, 2, NULL, NULL, 'Vivamus euismod non tellus eu accumsan. ', 'p5.jpg', 'a5fb9fae68628569a92ff9c14bfd66b0.jpg', 11168, 'image/jpeg', NULL, '2015-03-30 10:20:11', '2015-03-29 13:14:11', NULL),
-(13, 2, NULL, 'Morbi quis', ' Morbi quis condimentum quam, at bibendum est. Sed at metus nec libero laoreet rhoncus consectetur in diam.', 'p5.jpg', 'ab97601f17015694fec63facafaf90aa.jpg', 11168, 'image/jpeg', NULL, '2015-03-30 10:20:13', '2015-03-29 13:15:20', NULL),
-(14, 2, NULL, 'gravida', 'Vivamus at lacinia ante, accumsan gravida justo. Suspendisse nec luctus dolor. Fusce non lacus justo. Donec aliquam sagittis dapibus. Aliquam at nunc at ex varius feugiat.', 'p5.jpg', 'bd0fe3522531b4fc35dbef0b5be00edb.jpg', 11168, 'image/jpeg', NULL, '2015-03-30 10:20:14', '2015-03-29 13:17:00', NULL),
-(15, 1, NULL, NULL, NULL, 'bg.png', '233188524326fe27a92a47721b5be25d1f.png', 17920, 'image/png', '1427795865112423', '2015-03-31 11:52:02', '2015-03-31 02:57:58', NULL);
+INSERT INTO `images` (`id`, `user_id`, `album_id`, `name`, `description`, `image_name`, `image_url`, `image_size`, `image_mime`, `image_width`, `image_height`, `image_date_taken`, `sign_number`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 1, 1, 'Donec nec', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In iaculis sem eu venenatis luctus. Vestibulum ultrices sem est, vel tristique leo mollis eget. Nunc eu egestas odio.', 'anata.jpg', '1cd3b20ca1197a74f8bba91d03d511d2d.jpg', 74536, 'image/jpeg', 1, 0, NULL, NULL, '2015-04-06 18:49:00', '2015-03-29 12:02:37', NULL),
+(2, 1, 2, 'justo id justo', 'Vestibulum fermentum accumsan metus, vitae commodo dui feugiat nec.', '', '02c078846b5bb6bea507ace3477f62a8.jpg', 0, '', 1, 0, NULL, NULL, '2015-04-06 18:49:00', '2015-03-27 14:59:24', NULL),
+(3, 2, 2, 'tempor malesuada', 'Phasellus vel scelerisque lacus. Mauris vel lectus ac urna vulputate vehicula ut et orci. Vivamus lacinia iaculis lacus, non posuere neque laoreet quis. Aenean at neque eu tellus laoreet faucibus a a nulla. Phasellus scelerisque turpis quis dapibus aliquam.', '', '4b85c2f9b3c322d980c3cf7a770e270d.jpg', 0, '', 1, 0, NULL, NULL, '2015-04-06 18:49:00', '2015-03-27 14:59:24', NULL),
+(4, 2, NULL, 'Lorem ipsum dolor', NULL, '1mb.PNG', '6effbd79f65c2a2eef400522d2ec7ade.jpg', 42375, 'image/png', 1, 0, NULL, NULL, '2015-04-06 18:49:00', '2015-03-28 02:00:54', NULL),
+(5, 2, 2, NULL, NULL, 'anata.jpg', '7cd29e285a54cb6a7e25d807a571bfc8.jpg', 74536, 'image/jpeg', 1, 0, NULL, NULL, '2015-04-06 18:49:00', '2015-03-28 07:59:55', NULL),
+(6, 2, 1, 'consectetur adipiscing elit', 'Suspendisse commodo posuere lacus, in scelerisque dolor semper vehicula. Nulla vel velit vestibulum dui ullamcorper luctus. Quisque felis dui, tempus sit amet viverra id, ornare et lorem.', 'anata.jpg', '9f9a35d065353bcc5e83387c17b583cb.jpg', 74536, 'image/jpeg', 1, 0, NULL, NULL, '2015-04-06 18:49:00', '2015-03-28 07:57:50', NULL),
+(7, 2, 1, 'Etiam vehicula ex in sem lacinia pellentesque', 'Nulla et ipsum a lorem fermentum sodales id eu urna. Suspendisse sit amet tortor eu nunc aliquet molestie quis eu urna.', '1mb.PNG', '073423dd1301b3322b4230bc9192e36f.jpg', 42375, 'image/png', 1, 0, NULL, NULL, '2015-04-06 18:49:00', '2015-03-28 08:06:13', NULL),
+(8, 2, 1, NULL, 'Donec nec justo id justo tempor malesuada. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vehicula ex in sem lacinia pellentesque. Proin rhoncus massa ut magna suscipit aliquet. Suspendisse potenti. In pharetra vestibulum commodo. Curabitur tortor nisl, posuere non mattis sed, tempor ac justo. Morbi quis condimentum quam, at bibendum est. Sed at metus nec libero laoreet rhoncus consectetur in diam.', 'p4.jpg', '2131231231231231231232343454645.jpg', 2860, 'image/jpeg', 1, 0, NULL, NULL, '2015-04-06 18:49:00', '2015-03-29 12:00:25', NULL),
+(9, 2, 1, NULL, NULL, 'p4.jpg', '4113186_20131017080951.jpg', 2860, 'image/jpeg', 2, 0, NULL, NULL, '2015-04-06 18:50:27', '2015-03-29 12:00:49', NULL),
+(10, 2, NULL, 'Etiam vitae tempus justo', 'Etiam vitae tempus justo, id porttitor est.', 'p4.jpg', '9345724b615824fa912c60b76827163d.jpg', 2860, 'image/jpeg', 1, 0, NULL, NULL, '2015-04-06 18:49:00', '2015-03-29 12:00:52', NULL),
+(11, 2, NULL, NULL, NULL, 'p4.jpg', '51590525e313e0f292deded83c22c167.jpg', 2860, 'image/jpeg', 1, 0, NULL, NULL, '2015-04-06 18:49:00', '2015-03-29 12:01:07', NULL),
+(12, 2, NULL, NULL, 'Vivamus euismod non tellus eu accumsan. ', 'p5.jpg', 'a5fb9fae68628569a92ff9c14bfd66b0.jpg', 11168, 'image/jpeg', 1, 0, NULL, NULL, '2015-04-06 18:49:00', '2015-03-29 13:14:11', NULL),
+(13, 2, NULL, 'Morbi quis', ' Morbi quis condimentum quam, at bibendum est. Sed at metus nec libero laoreet rhoncus consectetur in diam.', 'p5.jpg', 'ab97601f17015694fec63facafaf90aa.jpg', 11168, 'image/jpeg', 1, 0, NULL, NULL, '2015-04-06 18:49:00', '2015-03-29 13:15:20', NULL),
+(14, 2, NULL, 'gravida', 'Vivamus at lacinia ante, accumsan gravida justo. Suspendisse nec luctus dolor. Fusce non lacus justo. Donec aliquam sagittis dapibus. Aliquam at nunc at ex varius feugiat.', 'p5.jpg', 'bd0fe3522531b4fc35dbef0b5be00edb.jpg', 11168, 'image/jpeg', 1, 0, NULL, NULL, '2015-04-06 18:49:00', '2015-03-29 13:17:00', NULL),
+(15, 1, NULL, NULL, NULL, 'bg.png', '233188524326fe27a92a47721b5be25d1f.png', 17920, 'image/png', 1, 0, NULL, '1427795865112423', '2015-04-06 18:49:00', '2015-03-31 02:57:58', NULL);
 
 -- --------------------------------------------------------
 
@@ -177,7 +179,7 @@ CREATE TABLE IF NOT EXISTS `image_tags` (
   PRIMARY KEY (`id`),
   KEY `image_id` (`image_id`),
   KEY `tag_id` (`tag_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=20 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=28 ;
 
 --
 -- Dumping data for table `image_tags`

@@ -46,7 +46,8 @@ class AlbumController extends \BaseController{
 	{
 		$imageController = new \controllers\api\v1b1\ImageController;
 		$response = json_decode($imageController->insert()->getContent(), true);
-		return self::uploaderContent($sign_number);
+		echo $response['result']['image_url'];
+		exit;
 	}
 	
 	#content

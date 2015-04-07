@@ -33,7 +33,7 @@
 					<div class="form-group">
 						<label for="title">Pictures</label>
 						<div class="uploader">
-							<iframe id="uploader" src="{{URL::to('content/album/uploader/'.$sign_number)}}"></iframe>
+							<iframe id="uploader-frame" src="{{URL::to('content/album/uploader/'.$sign_number)}}"></iframe>
 						</div>
 					</div>
 					<input name="sign_number" value="{{$sign_number}}" type="hidden">

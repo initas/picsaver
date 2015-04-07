@@ -38,17 +38,19 @@ class Embed{
 			}
 		}
 		
-		$resized_image = imagecreatetruecolor($width,$height);
+		$resampled_image = imagecreatetruecolor($width,$height);
 		if($mime == 'image/png'){
-			imagealphablending( $resized_image, false );
-			imagesavealpha( $resized_image, true );
+			imagealphablending( $resampled_image, false );
+			imagesavealpha( $resampled_image, true );
 		}
 		
 		$image = self::createImage($path, $mime);
-		imagecopyresampled($resized_image,$image,0,0,0,0,$width,$height,$imageInfo[0],$imageInfo[1]);
+		imagecopyresampled($resampled_image,$image,0,0,0,0,$width,$height,$imageInfo[0],$imageInfo[1]);
+		
+		$resampled_image = self::setOrientation($path, $mime, $resampled_image);
 		
      	self::setHeader($file_name, $mime);
-		self::imageOutput($resized_image, $mime);
+		self::imageOutput($resampled_image, $mime);
 	}
 	public static function cropImage($w, $h, $file_name){
 		$path = self::FOLDER_PATH.'/'.$file_name;
@@ -59,10 +61,10 @@ class Embed{
 		$height = $imageInfo[1];
 		$mime = $imageInfo['mime'];
 		
-		$dst_img = imagecreatetruecolor($w, $h);
+		$resampled_image = imagecreatetruecolor($w, $h);
 		if($mime == 'image/png'){
-			imagealphablending( $dst_img, false );
-			imagesavealpha( $dst_img, true );
+			imagealphablending( $resampled_image, false );
+			imagesavealpha( $resampled_image, true );
 		}
 		
 		$src_img = self::createImage($path, $mime);
@@ -73,17 +75,39 @@ class Embed{
 		
 		if($width_new > $width){
 			$h_point = (($height - $height_new) / 2);
-			imagecopyresampled($dst_img, $src_img, 0, 0, 0, $h_point, $w, $h, $width, $height_new);
+			imagecopyresampled($resampled_image, $src_img, 0, 0, 0, $h_point, $w, $h, $width, $height_new);
 		}else{
 			$w_point = (($width - $width_new) / 2);
-			imagecopyresampled($dst_img, $src_img, 0, 0, $w_point, 0, $w, $h, $width_new, $height);
+			imagecopyresampled($resampled_image, $src_img, 0, 0, $w_point, 0, $w, $h, $width_new, $height);
 		}
 		
+		$resampled_image = self::setOrientation($path, $mime, $resampled_image);
+		
      	self::setHeader($file_name, $mime);
-		self::imageOutput($dst_img, $mime);
+		self::imageOutput($resampled_image, $mime);
 	}
 	
 	#utillities
+	private static function setOrientation($path, $mime, $resampled_image){
+		if($mime=='image/jpeg'){
+			$exif = exif_read_data($path);
+			if (!empty($exif['Orientation'])){
+				$orientation = $exif['Orientation'];
+				switch($orientation) {
+					case 3:
+						$resampled_image = imagerotate($resampled_image, 180, 0);
+					break;
+					case 6:
+						$resampled_image = imagerotate($resampled_image, -90, 0);
+					break;
+					case 8:
+						$resampled_image = imagerotate($resampled_image, 90, 0);
+					break;
+				}
+			}
+		}
+		return $resampled_image;
+	}
 	private static function validatePath($image_url){
 		if(!File::exists($image_url)){
 			$image_url = 'img/stock/web/v1b1/image_not_found.png';
