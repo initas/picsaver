@@ -221,6 +221,10 @@ class ImageController extends \BaseController {
 	{
 		Embed::cropImage($w, $h, $file_name);
 	}
+	public function embedCroppedXY($x, $y, $w, $h, $file_name)
+	{
+		Embed::cropImageXY($x, $y, $w, $h, $file_name);
+	}
 	public function embedThumb($size, $file_name)
 	{
 		Embed::cropImage($size, $size, $file_name);

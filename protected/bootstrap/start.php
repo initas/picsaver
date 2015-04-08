@@ -25,7 +25,7 @@ $app = new Illuminate\Foundation\Application;
 */
 
 $env = $app->detectEnvironment(array(
-
+	'mf-mac' => array('MF', 'MF.local', 'MF.allega.lan'),
 	'mf' => array('mf'),
 	'local' => array('homestead'),
 

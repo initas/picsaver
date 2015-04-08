@@ -34,6 +34,7 @@ Route::group(array('prefix' => 'image'), function()
 		Route::get('height/{height}/{file_name}', 'controllers\api\v1b1\ImageController@embedByHeight');
 		Route::get('width/{width}/{file_name}', 'controllers\api\v1b1\ImageController@embedByWidth');
 		Route::get('{width}/{height}/{file_name}', 'controllers\api\v1b1\ImageController@embedCropped');
+		Route::get('{x}/{y}/{width}/{height}/{file_name}', 'controllers\api\v1b1\ImageController@embedCroppedXY');
 		Route::get('/{file_name}', 'controllers\api\v1b1\ImageController@embedOriginal');
 	});
 	Route::group(array('prefix' => '{image_id}'), function()

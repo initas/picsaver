@@ -52,6 +52,7 @@ class Embed{
      	self::setHeader($file_name, $mime);
 		self::imageOutput($resampled_image, $mime);
 	}
+	/*
 	public static function cropImage($w, $h, $file_name){
 		$path = self::FOLDER_PATH.'/'.$file_name;
 		$path = self::validatePath($path);
@@ -85,6 +86,38 @@ class Embed{
 		
      	self::setHeader($file_name, $mime);
 		self::imageOutput($resampled_image, $mime);
+	}
+	*/	
+	
+	public static function cropImageXY($x, $y, $w, $h, $file_name){
+		$path = 'img/image/'.$file_name;
+		$imageInfo = getimagesize($path);
+		$width = $imageInfo[0];
+		$height = $imageInfo[1];
+		$mime = $imageInfo['mime'];
+		
+		$dst_img = imagecreatetruecolor($w, $h);
+		if($mime == 'image/png'){
+			imagealphablending( $dst_img, false );
+			imagesavealpha( $dst_img, true );
+		}
+		
+		$src_img = self::createImage($path, $mime);
+		 
+		$width_new = $height * $w / $h;
+		$height_new = $width * $h / $w;
+		
+		
+		if($width_new > $width){
+			$h_point = (($height - $height_new) / 2);
+			imagecopyresampled($dst_img, $src_img, 0, 0, 0, $x, $w, $h, $width, $height_new);
+		}else{
+			$w_point = (($width - $width_new) / 2);
+			imagecopyresampled($dst_img, $src_img, 0, 0, $x, $y, $w, $h, $width_new, $height);
+		}
+		
+     	self::setHeader($file_name, $mime);
+		self::imageOutput($dst_img, $mime);
 	}
 	
 	#utillities
