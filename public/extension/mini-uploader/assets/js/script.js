@@ -47,7 +47,7 @@ $(function(){
 		done:function(e, data){
 			width = data.context.css('width');
 			width = width.replace(/px/gi, ""); 
-			//data.context.css('background-image', 'url('+URL+'/img/thumb/'+width+'/'+(data.result)+')');
+			data.context.css('background-image', 'url('+URL+'/img/thumb/'+width+'/'+(data.result)+')');
 		}
 
     });
