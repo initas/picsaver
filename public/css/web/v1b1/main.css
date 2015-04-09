@@ -337,38 +337,3 @@ input[type="color"]:focus,
   box-shadow: none !important;
   outline: 0 none;
 }
-
-/*masonry*/
-
-.masonry{
-	padding:0px;
-	margin:-7px;
-}
-
-@media (max-width: 767px){
-	.masonry .item{
-		width:calc(100% - 15px);
-		margin:7.5px;
-	}
-}
-@media (min-width: 768px) and (max-width: 991px) {
-	.masonry .item{
-		width:calc(33.3333% - 15px);
-		margin:7.5px;
-	}
-}
-@media (min-width: 992px) and (max-width: 1199px) {
-	.masonry .item{
-		width:calc(25% - 15px);
-		margin:7.5px;
-	}
-}
-@media (min-width: 1200px){
-	.masonry .item{
-		width:calc(20% - 15px);
-		margin:7.5px;
-	}
-	.masonry .item.landscape{
-		width:calc(40% - 15px);
-	}
-}

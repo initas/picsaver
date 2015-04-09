@@ -5,7 +5,7 @@
 	<?php
 		$detail = $image['detail'];
 	?>
-	<div class="card image item">
+	<li class="card image item">
 		<div class="img">
 			<a href="{{URL::to('image/'.$image['id'])}}">
 				<img src="{{URL::to('img/width/350/'.$image['image_url'])}}">
@@ -27,5 +27,5 @@
 			</div>
 			<div class="clearfix"></div>
 		</div>
-	</div>
+	</li>
 @endForeach

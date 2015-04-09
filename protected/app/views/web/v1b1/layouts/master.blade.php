@@ -19,8 +19,8 @@
 		@section('raw-style')
 		@show
 		
-		<!-- Custom Scripts -->
-		@section('style')
+		<!-- Custom Styles -->
+		@section('styles')
 		@show
 		
 		<!-- Scripts Initial -->
