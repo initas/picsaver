@@ -13,6 +13,13 @@ use \Response;
 use \Input;
 class ImageController extends \BaseController {
 	#GET
+	public function search()
+	{
+		$parameter['find'] = Input::get('find');
+		$image = Image::searchImage($parameter);
+		$response = Helper::getResults($image);
+		return Response::json($response); 
+	}
 	public function index()
 	{
 		$image = Image::getImages();

@@ -21,6 +21,7 @@ Route::group(array('prefix' => 'album'), function()
 Route::group(array('prefix' => 'image'), function()
 {
 	Route::get('/', 'controllers\api\v1b1\ImageController@index');
+	Route::get('/search', 'controllers\api\v1b1\ImageController@search');
 	Route::get('/most-viewed', 'controllers\api\v1b1\ImageController@getMostViewedImages');
 	Route::get('/most-downloaded', 'controllers\api\v1b1\ImageController@getMostDownloadedImages');
 	Route::get('/most-liked', 'controllers\api\v1b1\ImageController@getMostLikedImages');

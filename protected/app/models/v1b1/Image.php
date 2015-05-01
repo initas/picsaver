@@ -29,8 +29,8 @@ class Image extends Ardent {
 	|--------------------------------------------------------------------------
 	*/
 	public $autoPurgeRedundantAttributes = true;
-	public $autoHydrateEntityFromInput = true; // For new entries only
-  	public $forceEntityHydrationFromInput = true; // Also for Update
+	public $autoHydrateEntityFromInput = true;
+  	public $forceEntityHydrationFromInput = true;
 	
 	protected $appends = array(
 		'logged_in_user',
@@ -68,6 +68,19 @@ class Image extends Ardent {
 	*/
 	
 	#retrieve
+	public static function searchImage($parameter){
+		$find = $parameter['find'];
+		$tag = ImageTag::with('tag')->get();
+		$image = Image::where(function($image) use($find){
+				//to search image name and tag name by 'find' sring
+				$image->orWhere('name', 'like', '%'.$find.'%')
+				->orWhereHas('image_tags', function($q) use($find){
+					$q->where('tags.name', 'like', '%'.$find.'%');
+				});
+			})
+			->paginate(15);
+		return $image;
+	}
 	public static function getImage($image_id){
 		$image = Image::find($image_id);
 		return $image;

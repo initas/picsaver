@@ -1,6 +1,7 @@
 <?php
 namespace models\v1b1;
 use \DB;
+
 use Illuminate\Database\Eloquent\SoftDeletingTrait;
 use LaravelBook\Ardent\Ardent;
 class ImageTag extends Ardent {
@@ -25,24 +26,16 @@ class ImageTag extends Ardent {
 	|--------------------------------------------------------------------------
 	*/
 	public $autoPurgeRedundantAttributes = true;
-	public $autoHydrateEntityFromInput = true; // For new entries only
-  	public $forceEntityHydrationFromInput = true; // Also for Update
+	public $autoHydrateEntityFromInput = true;
+  	public $forceEntityHydrationFromInput = true;
 	
-    //public static $rules;
-	
-	public static function setRules(){
-		/*
-    	$rules = array();
-    	$rules['name'] = 'required';
-        self::$rules = $rules;
-		*/
-    }
-	
-    public static $relationsData = array();
+    public static $relationsData = array(
+    	'image'	=> array(self::BELONGS_TO, 'model\v1b1\Image'),
+		'tag' => array(self::BELONGS_TO, 'models\v1b1\Tag')
+	);
 	
     public static function boot(){
-        //parent::boot();
-        //self::setRules();
+        parent::boot();
     }
 	
 	/*
