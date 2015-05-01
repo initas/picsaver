@@ -52,7 +52,7 @@ class Embed{
      	self::setHeader($file_name, $mime);
 		self::imageOutput($resampled_image, $mime);
 	}
-	/*
+	
 	public static function cropImage($w, $h, $file_name){
 		$path = self::FOLDER_PATH.'/'.$file_name;
 		$path = self::validatePath($path);
@@ -87,7 +87,6 @@ class Embed{
      	self::setHeader($file_name, $mime);
 		self::imageOutput($resampled_image, $mime);
 	}
-	*/	
 	
 	public static function cropImageXY($x, $y, $w, $h, $file_name){
 		$path = 'img/image/'.$file_name;

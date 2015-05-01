@@ -16,14 +16,12 @@
 ?>
 @foreach($albums as $album)
 	@if($album['detail']['images_total'])
-		<div class="card album item">
+		<li class="card album item">
 			<div class="img">
 				<a href="#">
 					<?php $total_images = count($album['detail']['images']); ?>
 					@for($i=0;$i<$total_images;$i++)
-						<?php
-							$image = $album['detail']['images'][$i];
-						?>
+						<?php $image = $album['detail']['images'][$i]; ?>
 						<img class="col-{{$total_images}}" src="{{URL::to('img/'.$sizes[$total_images][$i].'/'.$image['image_url'])}}">
 					@endfor
 					<div class="clearfix"></div>
@@ -45,6 +43,6 @@
 				</div>
 				<div class="clearfix"></div>
 			</div>
-		</div>
+		</li>
 	@endIf
 @endForeach

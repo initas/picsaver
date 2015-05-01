@@ -1,12 +1,20 @@
 @extends('layouts.master')
 
+@section('styles')
+	{{HTML::style('public/css/web/v1b1/grid.css')}}
+@stop
+
 @section('scripts')
-	{{HTML::script('public/extension/masonry/masonry.min.js')}}
+	{{HTML::script('public/extension/grid-loading-effects/js/masonry.pkgd.min.js')}}
+	{{HTML::script('public/extension/grid-loading-effects/js/imagesloaded.js')}}
+	{{HTML::script('public/extension/grid-loading-effects/js/classie.js')}}
+	{{HTML::script('public/extension/grid-loading-effects/js/AnimOnScroll.js')}}
+	{{HTML::script('public/extension/grid-loading-effects/js/modernizr.custom.js')}}
 	{{HTML::script('public/js/web/v1b1/pages/album/index.js')}}
 @stop
 
 @section('content')
 	<div class="container-fluid">
-		<div class="masonry" data-content="album-index"></div>
+		<ul data-content="album-index" class="grid effect-6" id="grid"></ul>
 	</div>
 @stop

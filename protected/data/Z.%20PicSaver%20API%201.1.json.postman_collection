@@ -24,6 +24,25 @@
 			"collectionId": "bb80accc-3b3d-51c0-b0cc-d625528927c8"
 		},
 		{
+			"id": "0de9c2e9-79f1-812d-f0e2-70a5c72b7577",
+			"name": "Embed",
+			"description": "",
+			"write": true,
+			"order": [
+				"86a2662d-5a60-315c-7665-8afa33fef160",
+				"50023219-72c1-22b6-cdc6-98a08d5c0f85",
+				"9b657577-2de2-a36d-1375-873c89225dd0",
+				"c6fb3943-2388-8431-3cd4-3f7699709f95",
+				"90463862-2dcd-cb99-5e57-8b659d5a5f05"
+			],
+			"collection_name": "Z. PicSaver API 1.1",
+			"collection_owner": "22014",
+			"collection_id": "bb80accc-3b3d-51c0-b0cc-d625528927c8",
+			"collection": "bb80accc-3b3d-51c0-b0cc-d625528927c8",
+			"owner": "22014",
+			"collectionId": "bb80accc-3b3d-51c0-b0cc-d625528927c8"
+		},
+		{
 			"id": "686177d6-1eab-1072-456c-60eecd5dc6a0",
 			"name": "Image",
 			"description": "",
@@ -92,7 +111,7 @@
 	"synced": false,
 	"owner": "22014",
 	"subscribed": false,
-	"remoteLink": "",
+	"remoteLink": "https://www.getpostman.com/collections/0bf3155449caae3cf2d1",
 	"public": false,
 	"write": true,
 	"requests": [
@@ -204,23 +223,11 @@
 		{
 			"id": "330da2f4-cae3-6c5e-7c35-fa96d29f3f42",
 			"headers": "",
-			"url": "{{images.bank.api.1.1}}/album/1",
+			"url": "{{images.bank.api.1.1}}/album",
 			"preRequestScript": "",
 			"pathVariables": {},
 			"method": "GET",
 			"data": [
-				{
-					"key": "image",
-					"value": "",
-					"type": "file",
-					"enabled": true
-				},
-				{
-					"key": "title",
-					"value": "ok",
-					"type": "text",
-					"enabled": true
-				},
 				{
 					"key": "name",
 					"value": "ok",
@@ -228,14 +235,8 @@
 					"enabled": true
 				},
 				{
-					"key": "tag_names[0]",
-					"value": "dummy",
-					"type": "text",
-					"enabled": true
-				},
-				{
-					"key": "tag_names[1]",
-					"value": "2015",
+					"key": "description",
+					"value": "ok",
 					"type": "text",
 					"enabled": true
 				}
@@ -245,7 +246,7 @@
 			"tests": "",
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1427778849070,
+			"time": 1427802878883,
 			"name": "Index",
 			"description": "",
 			"collectionId": "bb80accc-3b3d-51c0-b0cc-d625528927c8",
@@ -371,6 +372,26 @@
 			"synced": false
 		},
 		{
+			"id": "50023219-72c1-22b6-cdc6-98a08d5c0f85",
+			"headers": "",
+			"url": "{{images.bank.api.1.1}}/image/embed/1cd3b20ca1197a74f8bba91d03d511d2d.jpg",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1427787982221,
+			"name": "Embed Original",
+			"description": "",
+			"collectionId": "bb80accc-3b3d-51c0-b0cc-d625528927c8",
+			"responses": [],
+			"synced": false
+		},
+		{
 			"id": "62a18077-d844-a88f-c2f1-d7edcb773289",
 			"headers": "",
 			"url": "{{images.bank.api.1.1}}/user/admin/image",
@@ -473,6 +494,46 @@
 			"synced": false
 		},
 		{
+			"id": "86a2662d-5a60-315c-7665-8afa33fef160",
+			"headers": "",
+			"url": "{{images.bank.api.1.1}}/image/embed/thumb/150/1cd3b20ca1197a74f8bba91d03d511d2d.jpg",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1427788053579,
+			"name": "Embed Thumb",
+			"description": "",
+			"collectionId": "bb80accc-3b3d-51c0-b0cc-d625528927c8",
+			"responses": [],
+			"synced": false
+		},
+		{
+			"id": "90463862-2dcd-cb99-5e57-8b659d5a5f05",
+			"headers": "",
+			"url": "{{images.bank.api.1.1}}/image/embed/160/150/1cd3b20ca1197a74f8bba91d03d511d2d.jpg",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1427790392664,
+			"name": "Embed Cropped",
+			"description": "",
+			"collectionId": "bb80accc-3b3d-51c0-b0cc-d625528927c8",
+			"responses": [],
+			"synced": false
+		},
+		{
 			"id": "96bad1c2-56d3-3a5f-26b5-2fd5d62c1c10",
 			"headers": "username: febri\n",
 			"url": "{{images.bank.api.1.1}}/image",
@@ -518,6 +579,26 @@
 			"helperAttributes": {},
 			"time": 1427778172476,
 			"name": "Insert Image",
+			"description": "",
+			"collectionId": "bb80accc-3b3d-51c0-b0cc-d625528927c8",
+			"responses": [],
+			"synced": false
+		},
+		{
+			"id": "9b657577-2de2-a36d-1375-873c89225dd0",
+			"headers": "",
+			"url": "{{images.bank.api.1.1}}/image/embed/height/250/1cd3b20ca1197a74f8bba91d03d511d2d.jpg",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1427789593380,
+			"name": "Embed By Height",
 			"description": "",
 			"collectionId": "bb80accc-3b3d-51c0-b0cc-d625528927c8",
 			"responses": [],
@@ -637,25 +718,33 @@
 			"synced": false
 		},
 		{
+			"id": "c6fb3943-2388-8431-3cd4-3f7699709f95",
+			"headers": "",
+			"url": "{{images.bank.api.1.1}}/image/embed/width/250/1cd3b20ca1197a74f8bba91d03d511d2d.jpg",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1427789578857,
+			"name": "Embed By Width",
+			"description": "",
+			"collectionId": "bb80accc-3b3d-51c0-b0cc-d625528927c8",
+			"responses": [],
+			"synced": false
+		},
+		{
 			"id": "c849481e-67fe-36fb-5e76-e9d48b147aec",
 			"headers": "",
-			"url": "{{images.bank.api.1.1}}/album",
+			"url": "{{images.bank.api.1.1}}/album/1",
 			"preRequestScript": "",
 			"pathVariables": {},
 			"method": "GET",
 			"data": [
-				{
-					"key": "image",
-					"value": "",
-					"type": "file",
-					"enabled": true
-				},
-				{
-					"key": "title",
-					"value": "ok",
-					"type": "text",
-					"enabled": true
-				},
 				{
 					"key": "name",
 					"value": "ok",
@@ -663,14 +752,8 @@
 					"enabled": true
 				},
 				{
-					"key": "tag_names[0]",
-					"value": "dummy",
-					"type": "text",
-					"enabled": true
-				},
-				{
-					"key": "tag_names[1]",
-					"value": "2015",
+					"key": "description",
+					"value": "ok",
 					"type": "text",
 					"enabled": true
 				}
@@ -680,13 +763,12 @@
 			"tests": "",
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1427778639229,
+			"time": 1427802873924,
 			"name": "Show Album",
 			"description": "",
 			"collectionId": "bb80accc-3b3d-51c0-b0cc-d625528927c8",
 			"responses": [],
-			"synced": false,
-			"folder": "3ef665a3-4f5c-5d7e-b5f9-60b6844487d3"
+			"synced": false
 		},
 		{
 			"id": "cdb4c37d-664d-38de-3f89-d28357c48822",
