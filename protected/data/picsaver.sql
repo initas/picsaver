@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 07, 2015 at 10:36 PM
+-- Generation Time: May 14, 2015 at 05:39 PM
 -- Server version: 5.5.27
 -- PHP Version: 5.4.7
 
@@ -72,7 +72,7 @@ CREATE TABLE IF NOT EXISTS `images` (
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`),
   KEY `album_id` (`album_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=22 ;
 
 --
 -- Dumping data for table `images`
@@ -93,7 +93,8 @@ INSERT INTO `images` (`id`, `user_id`, `album_id`, `name`, `description`, `image
 (12, 2, NULL, NULL, 'Vivamus euismod non tellus eu accumsan. ', 'p5.jpg', 'a5fb9fae68628569a92ff9c14bfd66b0.jpg', 11168, 'image/jpeg', 1, 0, NULL, NULL, '2015-04-06 18:49:00', '2015-03-29 13:14:11', NULL),
 (13, 2, NULL, 'Morbi quis', ' Morbi quis condimentum quam, at bibendum est. Sed at metus nec libero laoreet rhoncus consectetur in diam.', 'p5.jpg', 'ab97601f17015694fec63facafaf90aa.jpg', 11168, 'image/jpeg', 1, 0, NULL, NULL, '2015-04-06 18:49:00', '2015-03-29 13:15:20', NULL),
 (14, 2, NULL, 'gravida', 'Vivamus at lacinia ante, accumsan gravida justo. Suspendisse nec luctus dolor. Fusce non lacus justo. Donec aliquam sagittis dapibus. Aliquam at nunc at ex varius feugiat.', 'p5.jpg', 'bd0fe3522531b4fc35dbef0b5be00edb.jpg', 11168, 'image/jpeg', 1, 0, NULL, NULL, '2015-04-06 18:49:00', '2015-03-29 13:17:00', NULL),
-(15, 1, NULL, NULL, NULL, 'bg.png', '233188524326fe27a92a47721b5be25d1f.png', 17920, 'image/png', 1, 0, NULL, '1427795865112423', '2015-04-06 18:49:00', '2015-03-31 02:57:58', NULL);
+(15, 1, NULL, NULL, NULL, 'bg.png', '233188524326fe27a92a47721b5be25d1f.png', 17920, 'image/png', 1, 0, NULL, '1427795865112423', '2015-04-06 18:49:00', '2015-03-31 02:57:58', NULL),
+(21, 1, NULL, NULL, NULL, '20150405_183259.jpg', '2136a7a7b27c25707890db2cd0c4d3c1d0.jpg', 3102194, 'image/jpeg', 4128, 2322, '2015-04-05 11:32:59', '1428440205130861', '2015-04-07 20:57:12', '2015-04-07 13:57:12', NULL);
 
 -- --------------------------------------------------------
 
@@ -179,7 +180,7 @@ CREATE TABLE IF NOT EXISTS `image_tags` (
   PRIMARY KEY (`id`),
   KEY `image_id` (`image_id`),
   KEY `tag_id` (`tag_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=28 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=18 ;
 
 --
 -- Dumping data for table `image_tags`
