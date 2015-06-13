@@ -85,6 +85,10 @@ class Image extends Ardent {
 		$image = Image::find($image_id);
 		return $image;
 	}
+	public static function getImageByUrl($image_url){
+		$image = Image::where('image_url', $image_url)->first();
+		return $image;
+	}
 	public static function getImages(){
 		$image = Image::paginate(self::PER_PAGE);
 		return $image;
@@ -164,7 +168,7 @@ class Image extends Ardent {
 			
 			$fileName = $file->getClientOriginalName();
 			$fileSize = $file->getSize();
-			$extension = $file->getClientOriginalExtension();
+			//$extension = $file->getClientOriginalExtension();
 			$fileType = $file->getMimeType();
 			$fileSrc = $file->getRealPath();
 			
@@ -180,11 +184,14 @@ class Image extends Ardent {
 			$image->image_size = $fileSize;
 			$image->image_mime = $fileType;
 			
-			list($width, $height) = getimagesize($fileSrc); 
+			list($width, $height, $imageType) = getimagesize($fileSrc); 
 			$image->image_width = $width;
 			$image->image_height = $height;
+
+			$extension = image_type_to_extension($imageType);
+
 			
-			$targetName = ($image->id).md5($fileName.$fileSize.$fileType.$fileSrc.time().rand()).'.'.$extension;
+			$targetName = ($image->id).md5($fileName.$fileSize.$fileType.$fileSrc.time().rand()).$extension;
 			$image->image_url = $targetName;
 			
 			if($file->move(self::FOLDER_PATH, $targetName)){

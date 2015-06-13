@@ -161,7 +161,12 @@ class ImageController extends \BaseController {
 	{
 		DB::beginTransaction();
 		
-		$image = Image::getImage($image_id);
+		if(is_numeric($image_id)){
+			$image = Image::getImage($image_id);
+		}else{
+			$image = Image::getImageByUrl($image_id);
+		}
+
 		$response = Helper::getResult($image);
 		
 		if($response['status']==SUCCESS){
