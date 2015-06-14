@@ -1,13 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 3.5.2.2
+-- version 4.2.10
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: May 14, 2015 at 05:39 PM
--- Server version: 5.5.27
--- PHP Version: 5.4.7
+-- Host: localhost:3306
+-- Generation Time: Jun 14, 2015 at 04:21 PM
+-- Server version: 5.5.38
+-- PHP Version: 5.6.2
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
@@ -26,17 +26,15 @@ SET time_zone = "+00:00";
 -- Table structure for table `albums`
 --
 
-CREATE TABLE IF NOT EXISTS `albums` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `albums` (
+`id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `description` text,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `deleted_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `user_id` (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+  `deleted_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `albums`
@@ -44,7 +42,9 @@ CREATE TABLE IF NOT EXISTS `albums` (
 
 INSERT INTO `albums` (`id`, `user_id`, `name`, `description`, `created_at`, `updated_at`, `deleted_at`) VALUES
 (1, 1, 'Fermentum', 'Vestibulum fermentum accumsan metus, vitae commodo dui feugiat nec.', '2015-03-31 05:12:00', NULL, NULL),
-(2, 1, 'Feugiat', NULL, '2015-03-31 05:12:00', NULL, NULL);
+(2, 1, 'Feugiat', NULL, '2015-03-31 05:12:00', NULL, NULL),
+(3, 2, 'ok', 'ok', '2015-05-20 23:40:38', '2015-05-20 23:40:38', NULL),
+(4, 2, 'ok', 'ok', '2015-05-25 02:23:45', '2015-05-25 02:23:45', NULL);
 
 -- --------------------------------------------------------
 
@@ -52,8 +52,8 @@ INSERT INTO `albums` (`id`, `user_id`, `name`, `description`, `created_at`, `upd
 -- Table structure for table `images`
 --
 
-CREATE TABLE IF NOT EXISTS `images` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `images` (
+`id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `album_id` int(11) DEFAULT NULL,
   `name` varchar(255) DEFAULT NULL,
@@ -68,11 +68,8 @@ CREATE TABLE IF NOT EXISTS `images` (
   `sign_number` varchar(255) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `deleted_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `user_id` (`user_id`),
-  KEY `album_id` (`album_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=22 ;
+  `deleted_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=103 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `images`
@@ -93,8 +90,13 @@ INSERT INTO `images` (`id`, `user_id`, `album_id`, `name`, `description`, `image
 (12, 2, NULL, NULL, 'Vivamus euismod non tellus eu accumsan. ', 'p5.jpg', 'a5fb9fae68628569a92ff9c14bfd66b0.jpg', 11168, 'image/jpeg', 1, 0, NULL, NULL, '2015-04-06 18:49:00', '2015-03-29 13:14:11', NULL),
 (13, 2, NULL, 'Morbi quis', ' Morbi quis condimentum quam, at bibendum est. Sed at metus nec libero laoreet rhoncus consectetur in diam.', 'p5.jpg', 'ab97601f17015694fec63facafaf90aa.jpg', 11168, 'image/jpeg', 1, 0, NULL, NULL, '2015-04-06 18:49:00', '2015-03-29 13:15:20', NULL),
 (14, 2, NULL, 'gravida', 'Vivamus at lacinia ante, accumsan gravida justo. Suspendisse nec luctus dolor. Fusce non lacus justo. Donec aliquam sagittis dapibus. Aliquam at nunc at ex varius feugiat.', 'p5.jpg', 'bd0fe3522531b4fc35dbef0b5be00edb.jpg', 11168, 'image/jpeg', 1, 0, NULL, NULL, '2015-04-06 18:49:00', '2015-03-29 13:17:00', NULL),
-(15, 1, NULL, NULL, NULL, 'bg.png', '233188524326fe27a92a47721b5be25d1f.png', 17920, 'image/png', 1, 0, NULL, '1427795865112423', '2015-04-06 18:49:00', '2015-03-31 02:57:58', NULL),
-(21, 1, NULL, NULL, NULL, '20150405_183259.jpg', '2136a7a7b27c25707890db2cd0c4d3c1d0.jpg', 3102194, 'image/jpeg', 4128, 2322, '2015-04-05 11:32:59', '1428440205130861', '2015-04-07 20:57:12', '2015-04-07 13:57:12', NULL);
+(15, 2, NULL, 'cinta_brontosaurus_xlg.jpg', 'Uploaded from nomad', 'phpQFjy0M', '966d3996c8f626571036165ede555986ab.jpeg', 471488, 'image/jpeg', 1053, 1500, NULL, NULL, '2015-06-14 09:09:19', '2015-06-14 00:26:41', NULL),
+(16, 2, NULL, 'get_married_four_xlg.jpg', 'Uploaded from nomad', 'phpqCmxxg', '97388141548e7074463f280d60b422dff5.jpeg', 548332, 'image/jpeg', 1052, 1500, NULL, NULL, '2015-06-14 09:09:23', '2015-06-14 00:30:40', NULL),
+(17, 2, NULL, '1c9aaca2366df9accbc0bdcee14e9c5d.jpg', 'Uploaded from nomad', 'phpo7A1cs', '98c15cbd70fdf5f8abe35f5d8401339b43.jpeg', 16084, 'image/jpeg', 236, 331, NULL, NULL, '2015-06-14 09:09:25', '2015-06-14 00:31:03', NULL),
+(18, 2, NULL, 'hafalan_shalat_delisa_xlg.jpg', 'Uploaded from nomad', 'phpqYifZl', '993b4cc7a0829d02f1bc80e145053c06d0.jpeg', 567703, 'image/jpeg', 1052, 1500, NULL, NULL, '2015-06-14 09:09:28', '2015-06-14 00:31:21', NULL),
+(19, 2, NULL, 'operation_wedding_ver3_xlg.jpg', 'Uploaded from nomad', 'phpsQK6gC', '100172bed37549f267bd13f7ef212757bc9.jpeg', 528863, 'image/jpeg', 1052, 1500, NULL, NULL, '2015-06-14 09:09:31', '2015-06-14 00:31:49', NULL),
+(20, 2, NULL, 'slank_nggak_ada_matinya_xlg.jpg', 'Uploaded from nomad', 'phpATXQs4', '10174988b50642e4ecd7a81c8d7c15bf341.jpeg', 442951, 'image/jpeg', 1052, 1500, NULL, NULL, '2015-06-14 09:09:48', '2015-06-14 00:32:17', NULL),
+(21, 2, NULL, 'purple_love_xlg.jpg', 'Uploaded from nomad', 'phpFkiuOS', '1029fb62552f4613d010e50abf47a201bf4.jpeg', 519821, 'image/jpeg', 1053, 1500, NULL, NULL, '2015-06-14 09:09:52', '2015-06-14 00:32:40', NULL);
 
 -- --------------------------------------------------------
 
@@ -102,17 +104,14 @@ INSERT INTO `images` (`id`, `user_id`, `album_id`, `name`, `description`, `image
 -- Table structure for table `image_downloads`
 --
 
-CREATE TABLE IF NOT EXISTS `image_downloads` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `image_downloads` (
+`id` int(11) NOT NULL,
   `image_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `deleted_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `image_id` (`image_id`),
-  KEY `user_id` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  `deleted_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -120,17 +119,14 @@ CREATE TABLE IF NOT EXISTS `image_downloads` (
 -- Table structure for table `image_likes`
 --
 
-CREATE TABLE IF NOT EXISTS `image_likes` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `image_likes` (
+`id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `image_id` int(11) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `deleted_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `user_id` (`user_id`),
-  KEY `image_id` (`image_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+  `deleted_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `image_likes`
@@ -145,17 +141,14 @@ INSERT INTO `image_likes` (`id`, `user_id`, `image_id`, `created_at`, `updated_a
 -- Table structure for table `image_pins`
 --
 
-CREATE TABLE IF NOT EXISTS `image_pins` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `image_pins` (
+`id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `image_id` int(11) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `deleted_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `user_id` (`user_id`),
-  KEY `image_id` (`image_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+  `deleted_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `image_pins`
@@ -170,17 +163,14 @@ INSERT INTO `image_pins` (`id`, `user_id`, `image_id`, `created_at`, `updated_at
 -- Table structure for table `image_tags`
 --
 
-CREATE TABLE IF NOT EXISTS `image_tags` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `image_tags` (
+`id` int(11) NOT NULL,
   `image_id` int(11) NOT NULL,
   `tag_id` int(11) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `deleted_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `image_id` (`image_id`),
-  KEY `tag_id` (`tag_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=18 ;
+  `deleted_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `image_tags`
@@ -204,17 +194,14 @@ INSERT INTO `image_tags` (`id`, `image_id`, `tag_id`, `created_at`, `updated_at`
 -- Table structure for table `image_views`
 --
 
-CREATE TABLE IF NOT EXISTS `image_views` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `image_views` (
+`id` int(11) NOT NULL,
   `image_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `deleted_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `image_id` (`image_id`),
-  KEY `user_id` (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+  `deleted_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `image_views`
@@ -234,14 +221,13 @@ INSERT INTO `image_views` (`id`, `image_id`, `user_id`, `created_at`, `updated_a
 -- Table structure for table `permission`
 --
 
-CREATE TABLE IF NOT EXISTS `permission` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `permission` (
+`id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `deleted_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  `deleted_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -249,14 +235,13 @@ CREATE TABLE IF NOT EXISTS `permission` (
 -- Table structure for table `privileges`
 --
 
-CREATE TABLE IF NOT EXISTS `privileges` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `privileges` (
+`id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `deleted_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+  `deleted_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `privileges`
@@ -271,17 +256,14 @@ INSERT INTO `privileges` (`id`, `name`, `created_at`, `updated_at`, `deleted_at`
 -- Table structure for table `privilege_permissions`
 --
 
-CREATE TABLE IF NOT EXISTS `privilege_permissions` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `privilege_permissions` (
+`id` int(11) NOT NULL,
   `privilege_id` int(11) NOT NULL,
   `permission_id` int(11) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `deleted_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `privilege_id` (`privilege_id`),
-  KEY `permission_id` (`permission_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  `deleted_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -289,14 +271,13 @@ CREATE TABLE IF NOT EXISTS `privilege_permissions` (
 -- Table structure for table `tags`
 --
 
-CREATE TABLE IF NOT EXISTS `tags` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `tags` (
+`id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `deleted_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
+  `deleted_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tags`
@@ -313,8 +294,8 @@ INSERT INTO `tags` (`id`, `name`, `created_at`, `updated_at`, `deleted_at`) VALU
 -- Table structure for table `users`
 --
 
-CREATE TABLE IF NOT EXISTS `users` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `users` (
+`id` int(11) NOT NULL,
   `fb_id` text NOT NULL,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
@@ -330,11 +311,8 @@ CREATE TABLE IF NOT EXISTS `users` (
   `last_seen` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `deleted_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `user_privilege_id` (`privilege_id`),
-  KEY `privilege_id` (`privilege_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+  `deleted_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
@@ -350,6 +328,146 @@ INSERT INTO `users` (`id`, `fb_id`, `username`, `password`, `email`, `name`, `im
 (7, '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, '2015-03-29 08:08:36', '2015-03-29 08:08:36', NULL);
 
 --
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `albums`
+--
+ALTER TABLE `albums`
+ ADD PRIMARY KEY (`id`), ADD KEY `user_id` (`user_id`);
+
+--
+-- Indexes for table `images`
+--
+ALTER TABLE `images`
+ ADD PRIMARY KEY (`id`), ADD KEY `user_id` (`user_id`), ADD KEY `album_id` (`album_id`);
+
+--
+-- Indexes for table `image_downloads`
+--
+ALTER TABLE `image_downloads`
+ ADD PRIMARY KEY (`id`), ADD KEY `image_id` (`image_id`), ADD KEY `user_id` (`user_id`);
+
+--
+-- Indexes for table `image_likes`
+--
+ALTER TABLE `image_likes`
+ ADD PRIMARY KEY (`id`), ADD KEY `user_id` (`user_id`), ADD KEY `image_id` (`image_id`);
+
+--
+-- Indexes for table `image_pins`
+--
+ALTER TABLE `image_pins`
+ ADD PRIMARY KEY (`id`), ADD KEY `user_id` (`user_id`), ADD KEY `image_id` (`image_id`);
+
+--
+-- Indexes for table `image_tags`
+--
+ALTER TABLE `image_tags`
+ ADD PRIMARY KEY (`id`), ADD KEY `image_id` (`image_id`), ADD KEY `tag_id` (`tag_id`);
+
+--
+-- Indexes for table `image_views`
+--
+ALTER TABLE `image_views`
+ ADD PRIMARY KEY (`id`), ADD KEY `image_id` (`image_id`), ADD KEY `user_id` (`user_id`);
+
+--
+-- Indexes for table `permission`
+--
+ALTER TABLE `permission`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `privileges`
+--
+ALTER TABLE `privileges`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `privilege_permissions`
+--
+ALTER TABLE `privilege_permissions`
+ ADD PRIMARY KEY (`id`), ADD KEY `privilege_id` (`privilege_id`), ADD KEY `permission_id` (`permission_id`);
+
+--
+-- Indexes for table `tags`
+--
+ALTER TABLE `tags`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+ ADD PRIMARY KEY (`id`), ADD KEY `user_privilege_id` (`privilege_id`), ADD KEY `privilege_id` (`privilege_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `albums`
+--
+ALTER TABLE `albums`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `images`
+--
+ALTER TABLE `images`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=103;
+--
+-- AUTO_INCREMENT for table `image_downloads`
+--
+ALTER TABLE `image_downloads`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `image_likes`
+--
+ALTER TABLE `image_likes`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `image_pins`
+--
+ALTER TABLE `image_pins`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `image_tags`
+--
+ALTER TABLE `image_tags`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=24;
+--
+-- AUTO_INCREMENT for table `image_views`
+--
+ALTER TABLE `image_views`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+--
+-- AUTO_INCREMENT for table `permission`
+--
+ALTER TABLE `permission`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `privileges`
+--
+ALTER TABLE `privileges`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `privilege_permissions`
+--
+ALTER TABLE `privilege_permissions`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `tags`
+--
+ALTER TABLE `tags`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+--
 -- Constraints for dumped tables
 --
 
@@ -357,56 +475,56 @@ INSERT INTO `users` (`id`, `fb_id`, `username`, `password`, `email`, `name`, `im
 -- Constraints for table `images`
 --
 ALTER TABLE `images`
-  ADD CONSTRAINT `images_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
-  ADD CONSTRAINT `images_ibfk_3` FOREIGN KEY (`album_id`) REFERENCES `albums` (`id`);
+ADD CONSTRAINT `images_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
+ADD CONSTRAINT `images_ibfk_3` FOREIGN KEY (`album_id`) REFERENCES `albums` (`id`);
 
 --
 -- Constraints for table `image_downloads`
 --
 ALTER TABLE `image_downloads`
-  ADD CONSTRAINT `image_downloads_ibfk_1` FOREIGN KEY (`image_id`) REFERENCES `images` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `image_downloads_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ADD CONSTRAINT `image_downloads_ibfk_1` FOREIGN KEY (`image_id`) REFERENCES `images` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+ADD CONSTRAINT `image_downloads_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `image_likes`
 --
 ALTER TABLE `image_likes`
-  ADD CONSTRAINT `image_likes_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `image_likes_ibfk_2` FOREIGN KEY (`image_id`) REFERENCES `images` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ADD CONSTRAINT `image_likes_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+ADD CONSTRAINT `image_likes_ibfk_2` FOREIGN KEY (`image_id`) REFERENCES `images` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `image_pins`
 --
 ALTER TABLE `image_pins`
-  ADD CONSTRAINT `image_pins_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `image_pins_ibfk_2` FOREIGN KEY (`image_id`) REFERENCES `images` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ADD CONSTRAINT `image_pins_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+ADD CONSTRAINT `image_pins_ibfk_2` FOREIGN KEY (`image_id`) REFERENCES `images` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `image_tags`
 --
 ALTER TABLE `image_tags`
-  ADD CONSTRAINT `image_tags_ibfk_1` FOREIGN KEY (`image_id`) REFERENCES `images` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `image_tags_ibfk_2` FOREIGN KEY (`tag_id`) REFERENCES `tags` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ADD CONSTRAINT `image_tags_ibfk_1` FOREIGN KEY (`image_id`) REFERENCES `images` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+ADD CONSTRAINT `image_tags_ibfk_2` FOREIGN KEY (`tag_id`) REFERENCES `tags` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `image_views`
 --
 ALTER TABLE `image_views`
-  ADD CONSTRAINT `image_views_ibfk_1` FOREIGN KEY (`image_id`) REFERENCES `images` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `image_views_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ADD CONSTRAINT `image_views_ibfk_1` FOREIGN KEY (`image_id`) REFERENCES `images` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+ADD CONSTRAINT `image_views_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `privilege_permissions`
 --
 ALTER TABLE `privilege_permissions`
-  ADD CONSTRAINT `privilege_permissions_ibfk_1` FOREIGN KEY (`privilege_id`) REFERENCES `privileges` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `privilege_permissions_ibfk_2` FOREIGN KEY (`permission_id`) REFERENCES `permission` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ADD CONSTRAINT `privilege_permissions_ibfk_1` FOREIGN KEY (`privilege_id`) REFERENCES `privileges` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+ADD CONSTRAINT `privilege_permissions_ibfk_2` FOREIGN KEY (`permission_id`) REFERENCES `permission` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `users`
 --
 ALTER TABLE `users`
-  ADD CONSTRAINT `users_ibfk_2` FOREIGN KEY (`privilege_id`) REFERENCES `privileges` (`id`);
+ADD CONSTRAINT `users_ibfk_2` FOREIGN KEY (`privilege_id`) REFERENCES `privileges` (`id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
