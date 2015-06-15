@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:3306
--- Generation Time: Jun 14, 2015 at 04:21 PM
+-- Generation Time: Jun 15, 2015 at 03:08 PM
 -- Server version: 5.5.38
 -- PHP Version: 5.6.2
 
@@ -69,7 +69,7 @@ CREATE TABLE `images` (
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=103 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=59 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `images`
@@ -96,7 +96,44 @@ INSERT INTO `images` (`id`, `user_id`, `album_id`, `name`, `description`, `image
 (18, 2, NULL, 'hafalan_shalat_delisa_xlg.jpg', 'Uploaded from nomad', 'phpqYifZl', '993b4cc7a0829d02f1bc80e145053c06d0.jpeg', 567703, 'image/jpeg', 1052, 1500, NULL, NULL, '2015-06-14 09:09:28', '2015-06-14 00:31:21', NULL),
 (19, 2, NULL, 'operation_wedding_ver3_xlg.jpg', 'Uploaded from nomad', 'phpsQK6gC', '100172bed37549f267bd13f7ef212757bc9.jpeg', 528863, 'image/jpeg', 1052, 1500, NULL, NULL, '2015-06-14 09:09:31', '2015-06-14 00:31:49', NULL),
 (20, 2, NULL, 'slank_nggak_ada_matinya_xlg.jpg', 'Uploaded from nomad', 'phpATXQs4', '10174988b50642e4ecd7a81c8d7c15bf341.jpeg', 442951, 'image/jpeg', 1052, 1500, NULL, NULL, '2015-06-14 09:09:48', '2015-06-14 00:32:17', NULL),
-(21, 2, NULL, 'purple_love_xlg.jpg', 'Uploaded from nomad', 'phpFkiuOS', '1029fb62552f4613d010e50abf47a201bf4.jpeg', 519821, 'image/jpeg', 1053, 1500, NULL, NULL, '2015-06-14 09:09:52', '2015-06-14 00:32:40', NULL);
+(21, 2, NULL, 'purple_love_xlg.jpg', 'Uploaded from nomad', 'phpFkiuOS', '1029fb62552f4613d010e50abf47a201bf4.jpeg', 519821, 'image/jpeg', 1053, 1500, NULL, NULL, '2015-06-14 09:09:52', '2015-06-14 00:32:40', NULL),
+(22, 2, NULL, 'KW-1.jpg', 'Uploaded from nomad edutainment', 'phpupo6TJ', '2252714fca223c34480f74444ab5bdffad.jpeg', 149972, 'image/jpeg', 1080, 1003, NULL, NULL, '2015-06-15 07:04:08', '2015-06-15 00:04:08', NULL),
+(23, 2, NULL, 'Bola-Basket.jpg', 'Uploaded from nomad edutainment', 'phpS5uaeq', '2368640e9bbe63b86c92e87a852f607960.jpeg', 128407, 'image/jpeg', 1080, 1003, '2015-04-29 04:15:36', NULL, '2015-06-15 07:08:24', '2015-06-15 00:08:24', NULL),
+(24, 2, NULL, 'Yoga.jpg', 'Uploaded from nomad edutainment', 'php4kl7GA', '24dc258e5cf0b4150fba82adc27387b29d.jpeg', 106102, 'image/jpeg', 1080, 1003, '2015-04-29 04:18:24', NULL, '2015-06-15 07:12:17', '2015-06-15 00:12:17', NULL),
+(25, 2, NULL, 'Fun-in-Bali.jpg', 'Uploaded from nomad edutainment', 'phpJpCF2q', '25ec57c330cf91843f731a735baf1b4e99.jpeg', 229511, 'image/jpeg', 1080, 1003, NULL, NULL, '2015-06-15 07:12:47', '2015-06-15 00:12:47', NULL),
+(26, 2, NULL, 'pasarsanta-gondola-ice-cream.jpg', 'Uploaded from nomad edutainment', 'phpHtcPJD', '26abb532c21db0c07bf2a77131057baff1.jpeg', 164630, 'image/jpeg', 1080, 1003, '2015-05-18 03:05:30', NULL, '2015-06-15 07:20:54', '2015-06-15 00:20:54', NULL),
+(27, 2, NULL, 'pasarsanta-roast-beef-gusto.jpg', 'Uploaded from nomad edutainment', 'phpFhUvf7', '275dd109964b477e399b8b8922648e4f6a.jpeg', 123731, 'image/jpeg', 1080, 1003, NULL, NULL, '2015-06-15 07:26:14', '2015-06-15 00:26:14', NULL),
+(28, 2, NULL, 'photography-AR-Test.jpg', 'Uploaded from nomad edutainment', 'phpiX44MF', '287f54dea7ebcba65e4512664c87c44d4d.jpeg', 87383, 'image/jpeg', 1080, 1003, NULL, NULL, '2015-06-15 07:26:56', '2015-06-15 00:26:56', NULL),
+(29, 2, NULL, 'Beauty-Story.jpg', 'Uploaded from nomad edutainment', 'phpD8MED7', '291e0738e2136342257e2b5b6122299869.jpeg', 75097, 'image/jpeg', 1080, 1003, NULL, NULL, '2015-06-15 07:27:42', '2015-06-15 00:27:42', NULL),
+(30, 2, NULL, 'langsung-enak-chicken-grilled-salad.jpg', 'Uploaded from nomad edutainment', 'phpIiyHGE', '3064c366f6f8e892a32e2f27ecc631c050.jpeg', 152017, 'image/jpeg', 1080, 1003, NULL, NULL, '2015-06-15 07:28:23', '2015-06-15 00:28:23', NULL),
+(31, 2, NULL, 'selebriti-1.jpg', 'Uploaded from nomad edutainment', 'phphrHcJy', '31fed353ff9e920992490caf7d9e46e7a1.jpeg', 126132, 'image/jpeg', 1080, 1003, '2015-04-29 07:02:58', NULL, '2015-06-15 07:28:59', '2015-06-15 00:28:59', NULL),
+(32, 2, NULL, 'selebriti-eduard-betz.jpg', 'Uploaded from nomad edutainment', 'phprFwXMk', '32c0d91aaa572e76f70ce907a66268847c.jpeg', 80282, 'image/jpeg', 1080, 1003, NULL, NULL, '2015-06-15 07:29:30', '2015-06-15 00:29:30', NULL),
+(33, 2, NULL, 'KW-2.jpg', 'Uploaded from nomad edutainment', 'php0LKoJZ', '338f74f0a93e3b81ad4474f8688b49ebd2.jpeg', 234589, 'image/jpeg', 1080, 1003, NULL, NULL, '2015-06-15 07:29:54', '2015-06-15 00:29:54', NULL),
+(34, 2, NULL, 'pasarsanta-tsurro.jpg', 'Uploaded from nomad edutainment', 'php7vFsUF', '34f8f98ff2e98a1ab7c78fdb13e15ceddf.jpeg', 166532, 'image/jpeg', 1080, 1003, '2015-05-18 03:11:10', NULL, '2015-06-15 07:30:53', '2015-06-15 00:30:53', NULL),
+(35, 2, NULL, 'selebriti-nigel-baker-photographer.jpg', 'Uploaded from nomad edutainment', 'phphCJK2A', '357079876c969447a08f28152df19bec2c.jpeg', 85319, 'image/jpeg', 1080, 1003, NULL, NULL, '2015-06-15 07:31:24', '2015-06-15 00:31:24', NULL),
+(36, 2, NULL, 'sabrina-kitchen-panacotta.jpg', 'Uploaded from nomad edutainment', 'php7jvse0', '3685c9b03a4574b96f7704d76aeeb83146.jpeg', 354703, 'image/jpeg', 1080, 1003, NULL, NULL, '2015-06-15 07:31:56', '2015-06-15 00:31:56', NULL),
+(37, 2, NULL, 'sabrina-kitchen-pumpkin-soup.jpg', 'Uploaded from nomad edutainment', 'phpXvGE9s', '3770cf275c9ff23c170252d26d986e74ff.jpeg', 274438, 'image/jpeg', 1080, 1003, NULL, NULL, '2015-06-15 07:33:38', '2015-06-15 00:33:38', NULL),
+(38, 2, NULL, 'sabrina-kitchen-roasted-chicken.jpg', 'Uploaded from nomad edutainment', 'phpPeJM3W', '38dc02bf0fa6842c5b881ebc9f92e0cb00.jpeg', 118119, 'image/jpeg', 1080, 1003, '2015-05-18 03:08:48', NULL, '2015-06-15 07:34:13', '2015-06-15 00:34:13', NULL),
+(39, 2, NULL, 'langsung-enak-chicken-grilled-salad.jpg', 'Uploaded from nomad edutainment', 'phpccD6AA', '39a72d5251b1a8044192089fe0fe586b71.jpeg', 152017, 'image/jpeg', 1080, 1003, NULL, NULL, '2015-06-15 07:34:40', '2015-06-15 00:34:40', NULL),
+(40, 2, NULL, 'langsung-enak-sosis-gulung-telor.jpg', 'Uploaded from nomad edutainment', 'phpsZGeTl', '402e8146a72d33a608ad06418abde90dbb.jpeg', 225481, 'image/jpeg', 1080, 1003, NULL, NULL, '2015-06-15 07:35:18', '2015-06-15 00:35:18', NULL),
+(41, 2, NULL, 'belajar-pemrogaman-android.jpg', 'Uploaded from nomad edutainment', 'phpctoLfw', '415f9570c6eb7f6858685ce6c699fa1eee.jpeg', 70015, 'image/jpeg', 1080, 1003, NULL, NULL, '2015-06-15 07:36:08', '2015-06-15 00:36:08', NULL),
+(42, 2, NULL, 'belajar-seni-merangkai-bunga.jpg', 'Uploaded from nomad edutainment', 'php49Fvgj', '42a907d9fa3ce39fbdd79bf78957b9c321.jpeg', 146537, 'image/jpeg', 1080, 1003, NULL, NULL, '2015-06-15 07:36:48', '2015-06-15 00:36:48', NULL),
+(43, 2, NULL, 'belajar-tari-bali.jpg', 'Uploaded from nomad edutainment', 'phpmpyScE', '430371e8360cdb8a5d3e4601e255c884e2.jpeg', 176209, 'image/jpeg', 1080, 1003, NULL, NULL, '2015-06-15 07:37:33', '2015-06-15 00:37:33', NULL),
+(44, 2, NULL, 'KW-3.jpg', 'Uploaded from nomad edutainment', 'php1xteaQ', '444da6d02fcb81adfb2ea63218791f97a7.jpeg', 265310, 'image/jpeg', 1080, 1003, NULL, NULL, '2015-06-15 07:37:59', '2015-06-15 00:37:59', NULL),
+(45, 2, NULL, 'belajar-gitar-bersama-andy-pradipta.jpg', 'Uploaded from nomad edutainment', 'phpOmKuw4', '4575a3e4edd85fbe2a9abd90e6a8b5dcea.jpeg', 147732, 'image/jpeg', 1080, 1003, NULL, NULL, '2015-06-15 07:38:27', '2015-06-15 00:38:27', NULL),
+(46, 2, NULL, 'belajar-gitar-bersama-andy-pradipta.jpg', 'Uploaded from nomad edutainment', 'phpfoAy0M', '46a2bad565fdbc3b7d372b086170ca4d86.jpeg', 147732, 'image/jpeg', 1080, 1003, NULL, NULL, '2015-06-15 07:38:31', '2015-06-15 00:38:31', NULL),
+(47, 2, NULL, 'tips-pohon-mangga-cepat-berbuah.jpg', 'Uploaded from nomad edutainment', 'phpaAsFzQ', '47c5a1e9d0941f7456656919af4e19efec.jpeg', 286195, 'image/jpeg', 1080, 1003, NULL, NULL, '2015-06-15 07:41:22', '2015-06-15 00:41:22', NULL),
+(48, 2, NULL, 'kisah-suksses-setelah-putus-sekolah.jpg', 'Uploaded from nomad edutainment', 'phpZyKT5D', '48ea1b1e19e46691ea52f3acadfbac4f08.jpeg', 56121, 'image/jpeg', 1080, 1003, NULL, NULL, '2015-06-15 07:41:46', '2015-06-15 00:41:46', NULL),
+(49, 2, NULL, 'kursus-membuat-bakso.jpg', 'Uploaded from nomad edutainment', 'phpUb4eDI', '49d78ea062048aa840ccb08bf3cfaa209f.jpeg', 190385, 'image/jpeg', 1080, 1003, NULL, NULL, '2015-06-15 07:42:08', '2015-06-15 00:42:08', NULL),
+(50, 2, NULL, 'resep-dan-cara-membuat-ice-cream.jpg', 'Uploaded from nomad edutainment', 'phpPnthBH', '508c65793289eeac0a8598ff09fa610ba2.jpeg', 203465, 'image/jpeg', 1080, 1003, NULL, NULL, '2015-06-15 07:42:41', '2015-06-15 00:42:41', NULL),
+(51, 2, NULL, 'kursus-mekanik-motor.jpg', 'Uploaded from nomad edutainment', 'phpYwbJQC', '51135e6b28cc4cecdfd42cfaa1b709b54b.jpeg', 124096, 'image/jpeg', 1080, 1003, NULL, NULL, '2015-06-15 07:43:18', '2015-06-15 00:43:18', NULL),
+(52, 2, NULL, 'pertandingan-kemahiran-bengkel-automotif.jpg', 'Uploaded from nomad edutainment', 'phpV4BiEU', '52ea8d39f89aec00e94b08a0b3e0b6233f.jpeg', 111239, 'image/jpeg', 1080, 1003, NULL, NULL, '2015-06-15 07:43:51', '2015-06-15 00:43:51', NULL),
+(53, 2, NULL, 'rally-dakar.jpg', 'Uploaded from nomad edutainment', 'phpjXdGh4', '53a66ec8e74fbb31ee9352379a6fd8556d.jpeg', 269028, 'image/jpeg', 1080, 1003, NULL, NULL, '2015-06-15 07:44:19', '2015-06-15 00:44:19', NULL),
+(54, 2, NULL, 'KW-4.jpg', 'Uploaded from nomad edutainment', 'phpIn3wr6', '545832c7c02a81e9d7bf2b594798777ab5.jpeg', 136693, 'image/jpeg', 1080, 1003, NULL, NULL, '2015-06-15 07:44:52', '2015-06-15 00:44:52', NULL),
+(55, 2, NULL, 'Belajar-2.jpg', 'Uploaded from nomad edutainment', 'phpNrsxJ7', '55bd16475638c891fa290a445ede6cebfc.jpeg', 128198, 'image/jpeg', 1080, 1002, NULL, NULL, '2015-06-15 07:45:15', '2015-06-15 00:45:15', NULL),
+(56, 2, NULL, 'Belajar-1.jpg', 'Uploaded from nomad edutainment', 'phptn4esG', '56af606777eaa14d0435ae7a855f42cb50.jpeg', 76379, 'image/jpeg', 1080, 1003, NULL, NULL, '2015-06-15 07:45:30', '2015-06-15 00:45:30', NULL),
+(57, 2, NULL, 'Belajar-3.jpg', 'Uploaded from nomad edutainment', 'phpwkDNer', '57a405a4733ceb7e9d9259d018d9096c3c.jpeg', 79619, 'image/jpeg', 1080, 1003, NULL, NULL, '2015-06-15 07:45:49', '2015-06-15 00:45:49', NULL),
+(58, 2, NULL, 'Belajar-4.jpg', 'Uploaded from nomad edutainment', 'phphbUprd', '584cd1de55878a036dd33558e64df3d341.jpeg', 117024, 'image/jpeg', 1080, 1003, NULL, NULL, '2015-06-15 07:46:07', '2015-06-15 00:46:07', NULL);
 
 -- --------------------------------------------------------
 
@@ -170,7 +207,7 @@ CREATE TABLE `image_tags` (
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `image_tags`
@@ -416,7 +453,7 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 -- AUTO_INCREMENT for table `images`
 --
 ALTER TABLE `images`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=103;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=59;
 --
 -- AUTO_INCREMENT for table `image_downloads`
 --
@@ -436,7 +473,7 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 -- AUTO_INCREMENT for table `image_tags`
 --
 ALTER TABLE `image_tags`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=24;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=18;
 --
 -- AUTO_INCREMENT for table `image_views`
 --
