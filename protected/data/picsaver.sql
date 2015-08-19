@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:3306
--- Generation Time: Aug 08, 2015 at 06:28 PM
+-- Generation Time: Aug 19, 2015 at 12:38 PM
 -- Server version: 5.5.38
 -- PHP Version: 5.6.2
 
@@ -69,7 +69,7 @@ CREATE TABLE `images` (
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=67 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=90 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `images`
@@ -141,7 +141,30 @@ INSERT INTO `images` (`id`, `user_id`, `album_id`, `name`, `description`, `image
 (63, 2, NULL, 'operationweddingtrailer.jpg', 'Uploaded from nomad movie clip', 'php8TtHUf', '636f5118aaa4258a00975a064238cb74f8.jpeg', 4686, 'image/jpeg', 169, 95, NULL, NULL, '2015-07-08 05:39:17', '2015-07-07 22:39:17', NULL),
 (64, 2, NULL, 'trailerslanknggakadamatinya.jpg', 'Uploaded from nomad movie clip', 'php5OrzDz', '646565531280fec350a26755a3eff86e87.jpeg', 3838, 'image/jpeg', 169, 95, NULL, NULL, '2015-07-08 05:42:05', '2015-07-07 22:42:05', NULL),
 (65, 2, NULL, 'trailerpurplelove.jpg', 'Uploaded from nomad movie clip', 'phpMVQbVZ', '659c2f008fbd7bb0630d1f65092f197206.jpeg', 4354, 'image/jpeg', 169, 95, NULL, NULL, '2015-07-08 05:42:41', '2015-07-07 22:42:41', NULL),
-(66, 2, NULL, '2008_horikita.jpg', 'Uploaded from nomad movie', 'phpWGfbVk', '662473c904dbc53fda33ebe18c1ef8f3cd.jpeg', 79632, 'image/jpeg', 350, 347, NULL, NULL, '2015-08-08 11:16:42', '2015-08-08 04:16:42', NULL);
+(66, 2, NULL, '2008_horikita.jpg', 'Uploaded from nomad movie', 'phpWGfbVk', '662473c904dbc53fda33ebe18c1ef8f3cd.jpeg', 79632, 'image/jpeg', 350, 347, NULL, NULL, '2015-08-08 11:16:42', '2015-08-08 04:16:42', NULL),
+(67, 2, NULL, 'lululul', 'uploaded from nomad live channel', 'rhg5SQKe2Ludvh2mSTl6i_Ndc7bgwKtnQ8DZ2ye9PngGOccB2qetE93DKj8JHApxivQ%3Dw300.png', '67cafa5c12aefc3d9921153f77cb6ea950.png', 72742, 'image/png', 300, 300, NULL, NULL, '2015-08-10 08:05:50', '2015-08-09 20:42:13', NULL),
+(68, 2, NULL, NULL, NULL, '10462692_892452457467157_4106739406657170947_n.jpg', '680da143d6baf906b4c88307076cd9451e.jpeg', 4296, 'image/jpeg', 180, 180, NULL, NULL, '2015-08-11 11:02:05', '2015-08-11 04:02:05', NULL),
+(69, 2, NULL, NULL, NULL, '715403_L.jpg', '6937e485eb6a4892b1a35c22bb35313d90.jpeg', 138609, 'image/jpeg', 500, 500, NULL, NULL, '2015-08-12 12:39:30', '2015-08-12 05:39:30', NULL),
+(70, 2, NULL, NULL, NULL, 'V4HttpAssetRepositoryClient-ticket.weknlvte.jpg-4221017801182967045.600x600-75.jpg', '704dcfe63f219d865fad4bcbd4a0b47411.jpeg', 89694, 'image/jpeg', 600, 600, NULL, NULL, '2015-08-12 12:39:56', '2015-08-12 05:39:56', NULL),
+(71, 2, NULL, NULL, NULL, 'Dewa_-_Laskar_Cinta.jpg', '71c0f5dcda56c250d002d68d4dce925d4b.jpeg', 21568, 'image/jpeg', 236, 240, NULL, NULL, '2015-08-12 12:40:29', '2015-08-12 05:40:29', NULL),
+(72, 2, NULL, NULL, NULL, 'red-road-to-abex.jpg', '72b4bdcd8ddada2e5205ae023ff705efe2.jpeg', 72525, 'image/jpeg', 300, 300, NULL, NULL, '2015-08-12 12:40:56', '2015-08-12 05:40:56', NULL),
+(73, 2, NULL, 'kabayan', NULL, '01-SI-KABAYAN-SABA-KOTA.jpg', '73e8f93e531f09ba502f3bac7507674c7e.jpeg', 40725, 'image/jpeg', 223, 320, NULL, NULL, '2015-08-19 04:34:49', '2015-08-18 21:34:49', NULL),
+(74, 2, NULL, 'kabayan', NULL, '4b6b2339.jpg', '741040918c96d6a717d0ede66543bdeb44.jpeg', 70364, 'image/jpeg', 560, 800, NULL, NULL, '2015-08-19 04:35:34', '2015-08-18 21:35:34', NULL),
+(75, 2, NULL, 'kabayan', NULL, '18%252B%252B-Forever-Love.jpg', '75c83a904d3396fe9717f297658b98c070.jpeg', 30732, 'image/jpeg', 224, 320, NULL, NULL, '2015-08-19 04:35:40', '2015-08-18 21:35:40', NULL),
+(76, 2, NULL, 'kabayan', NULL, '220px-Tarix_Jabrix.jpg', '76b9be7434af11345d998490674cc618eb.jpeg', 22620, 'image/jpeg', 220, 314, NULL, NULL, '2015-08-19 04:35:44', '2015-08-18 21:35:44', NULL),
+(77, 2, NULL, 'kabayan', NULL, 'Basah_film.jpg', '77d6a6d96a39821297943633066806adda.jpeg', 243605, 'image/jpeg', 850, 1215, NULL, NULL, '2015-08-19 04:35:49', '2015-08-18 21:35:49', NULL),
+(78, 2, NULL, 'kabayan', NULL, 'Film_XXL.jpg', '78381ce4951caa9e8ee02ed9175dccf84f.jpeg', 52135, 'image/jpeg', 422, 604, NULL, NULL, '2015-08-19 04:35:53', '2015-08-18 21:35:53', NULL),
+(79, 2, NULL, 'kabayan', NULL, 'Get_Married_2.jpg', '790a6ac83fcab8cc49ec54d2baa1a83281.jpeg', 29051, 'image/jpeg', 280, 400, NULL, NULL, '2015-08-19 04:35:57', '2015-08-18 21:35:57', NULL),
+(80, 2, NULL, 'kabayan', NULL, 'heart.0.jpg', '800afcb277dd568bee25784ef7e519d773.jpeg', 9395, 'image/jpeg', 140, 205, NULL, NULL, '2015-08-19 04:36:02', '2015-08-18 21:36:02', NULL),
+(81, 2, NULL, 'kabayan', NULL, 'lantai13.jpg', '813723f23a21b818d1a0d0ce231d15076f.jpeg', 127094, 'image/jpeg', 280, 401, NULL, NULL, '2015-08-19 04:36:05', '2015-08-18 21:36:05', NULL),
+(82, 2, NULL, 'kabayan', NULL, 'Miracle-Jatuh-Dari-Surga.jpg', '821c4821ac99c8d3233528335ea30489b9.jpeg', 43255, 'image/jpeg', 351, 500, NULL, NULL, '2015-08-19 04:36:09', '2015-08-18 21:36:09', NULL),
+(83, 2, NULL, 'kabayan', NULL, 'redcobex_poster450.jpg', '8328fae84ba42cb4bbbb3c3da478059051.jpeg', 44888, 'image/jpeg', 318, 450, NULL, NULL, '2015-08-19 04:36:14', '2015-08-18 21:36:14', NULL),
+(84, 2, NULL, 'kabayan', NULL, 'sorban.jpg', '84387ada17d64e332640b13a76a7e15532.jpeg', 52454, 'image/jpeg', 420, 600, NULL, NULL, '2015-08-19 04:36:17', '2015-08-18 21:36:17', NULL),
+(85, 2, NULL, 'kabayan', NULL, 'ustadz-jaka-1.jpg', '855dbf7c11e52ebafdec91199ef841da88.jpeg', 82905, 'image/jpeg', 1080, 545, NULL, NULL, '2015-08-19 05:35:30', '2015-08-18 22:35:30', NULL),
+(86, 2, NULL, 'kabayan', NULL, 'kepadamu-aku-berserah-1.jpg', '868c7a08762581e53d8493480de95b39f4.jpeg', 92466, 'image/jpeg', 1080, 545, NULL, NULL, '2015-08-19 05:35:58', '2015-08-18 22:35:58', NULL),
+(87, 2, NULL, 'kabayan', NULL, 'kutemukan-engkau-di-setiap-tahajudku-1.jpg', '8786257d9457a713c8250cc8c21f9e3551.jpeg', 152163, 'image/jpeg', 1080, 545, NULL, NULL, '2015-08-19 05:36:19', '2015-08-18 22:36:19', NULL),
+(88, 2, NULL, 'kabayan', NULL, 'cahaya-cahaya-cintamu-1.jpg', '886aaf1d2b413af7232c02e366f7736f7c.jpeg', 79289, 'image/jpeg', 1080, 545, NULL, NULL, '2015-08-19 05:36:49', '2015-08-18 22:36:49', NULL),
+(89, 2, NULL, 'kabayan', NULL, 'kepadamu-aku-berserah-1.jpg', '897fe75dfbe886b725a477a16288313f7f.jpeg', 92466, 'image/jpeg', 1080, 545, NULL, NULL, '2015-08-19 05:37:08', '2015-08-18 22:37:08', NULL);
 
 -- --------------------------------------------------------
 
@@ -215,7 +238,7 @@ CREATE TABLE `image_tags` (
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `image_tags`
@@ -231,7 +254,9 @@ INSERT INTO `image_tags` (`id`, `image_id`, `tag_id`, `created_at`, `updated_at`
 (14, 13, 7, '2015-03-29 20:15:20', NULL, NULL),
 (15, 13, 8, '2015-03-29 20:15:20', NULL, NULL),
 (16, 14, 7, '2015-03-29 20:17:00', NULL, NULL),
-(17, 14, 8, '2015-03-29 20:17:00', NULL, NULL);
+(17, 14, 8, '2015-03-29 20:17:00', NULL, NULL),
+(18, 67, 7, '2015-08-10 03:42:13', NULL, NULL),
+(19, 67, 8, '2015-08-10 03:42:13', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -461,7 +486,7 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 -- AUTO_INCREMENT for table `images`
 --
 ALTER TABLE `images`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=67;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=90;
 --
 -- AUTO_INCREMENT for table `image_downloads`
 --
@@ -481,7 +506,7 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 -- AUTO_INCREMENT for table `image_tags`
 --
 ALTER TABLE `image_tags`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=18;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=20;
 --
 -- AUTO_INCREMENT for table `image_views`
 --
