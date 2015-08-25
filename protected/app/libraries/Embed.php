@@ -184,8 +184,6 @@ class Embed{
 		header('Last-Modified: '. gmdate('D, d M Y H:i:s', time()) .' GMT');
 		header('Expires:'.        gmdate('D, d M Y H:i:s', time() + $expiry) .' GMT');
 		header('Content-type: '.$mime);
-
-		dd($mime);
 	}
 	
 }
