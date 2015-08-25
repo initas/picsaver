@@ -10,6 +10,7 @@ class Embed{
 		
      	self::setHeader($file_name, $mime);
 		echo file_get_contents($path);
+		exit;
 	}
 	
 	public static function resizeImage($newsize, $file_name, $byHeight=false){
@@ -168,6 +169,7 @@ class Embed{
 			imagegif($file, null, 100);
 		}
 		imagedestroy($file);
+		exit;
 	}
 	
 	private static function setHeader($file_name, $mime){
