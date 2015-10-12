@@ -22,7 +22,7 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => '103.31.226.147',
+			'host'      => '202.59.166.5',
 			'database'  => 'allegalib',
 			'username'  => 'library',
 			'password'  => 'lib0410',
