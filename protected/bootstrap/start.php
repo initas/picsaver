@@ -27,7 +27,7 @@ $app = new Illuminate\Foundation\Application;
 $env = $app->detectEnvironment(array(
 	'mf-mac' => array('MF', 'MF.local', 'MF.allega.lan', 'mf-mbp.allega.lan', 'mf-mbp.local'),
 	'mf' => array('mf'),
-	'allega-server' => ('ip147-226-31-103.as131755.net'),
+	'allega-server' => ('ip-166-5.nap.net.id'),
 	'local' => array('homestead'),
 
 ));
