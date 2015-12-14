@@ -162,11 +162,11 @@ class Embed{
 	private static function imageOutput($file, $mime){
 		
 		if($mime == 'image/jpeg'){
-			imagejpeg($file, null, 100);
+			imagejpeg($file, null, 75);
 		}elseif($mime == 'image/png'){
 			imagepng($file, null, 0);
 		}elseif($mime == 'image/gif'){
-			imagegif($file, null, 100);
+			imagegif($file, null, 75);
 		}
 		imagedestroy($file);
 		exit;
