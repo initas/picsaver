@@ -16,6 +16,8 @@ class Embed{
 	public static function resizeImage($newsize, $file_name, $byHeight=false){
 		$path = self::FOLDER_PATH.'/'.$file_name;
 		$path = self::validatePath($path);
+
+		$path = isset($_GET['path']) ? $_GET['path'] : $path;
 		
 		$imageInfo = getimagesize($path);
 		$mime = $imageInfo['mime'];
@@ -57,6 +59,8 @@ class Embed{
 	public static function cropImage($w, $h, $file_name){
 		$path = self::FOLDER_PATH.'/'.$file_name;
 		$path = self::validatePath($path);
+		
+		$path = isset($_GET['path']) ? $_GET['path'] : $path;
 		
 		$imageInfo = getimagesize($path);
 		$width = $imageInfo[0];
